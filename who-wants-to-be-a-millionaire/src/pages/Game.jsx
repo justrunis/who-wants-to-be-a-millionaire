@@ -25,6 +25,8 @@ export default function Game({ playerName }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const [currentHint, setCurrentHint] = useState(null);
+
   const [showVictoryModal, setShowVictoryModal] = useState(false);
 
   useEffect(() => {
@@ -35,12 +37,14 @@ export default function Game({ playerName }) {
     if (option === questions[currentQuestion - 1].correct) {
       setTimeout(() => {
         setSelectedAnswerStyle("bg-green-500");
+        setCurrentHint(null);
         playCorrect();
       }, 2000);
       if (currentQuestion !== 15) {
         setTimeout(() => {
           setCurrentQuestion(currentQuestion + 1);
           setSelectedOption(null);
+          setCurrentHint(null);
           setSelectedAnswerStyle("bg-yellow-500");
         }, 3000);
       }
@@ -50,6 +54,7 @@ export default function Game({ playerName }) {
           setSelectedOption(null);
           setSelectedAnswerStyle("bg-yellow-500");
           setShowVictoryModal(true);
+          setCurrentHint(null);
         }, 2000);
       }
     } else {
@@ -70,7 +75,7 @@ export default function Game({ playerName }) {
   }
 
   function handleHint(hint) {
-    console.log(hint);
+    setCurrentHint(hint);
   }
 
   return (
@@ -117,6 +122,7 @@ export default function Game({ playerName }) {
           selectedAnswerStyle={selectedAnswerStyle}
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
+          hint={currentHint}
         />
       </div>
       <div className="flex lg:flex-col items-center justify-center h-full w-1/2 lg:w-1/4 bg-base-100">
