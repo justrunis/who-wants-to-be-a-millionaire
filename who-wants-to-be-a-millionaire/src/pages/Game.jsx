@@ -75,7 +75,9 @@ export default function Game({ playerName }) {
   }
 
   function handleHint(hint) {
-    setCurrentHint(hint);
+    setTimeout(() => {
+      setCurrentHint(hint);
+    }, 2000);
   }
 
   return (
