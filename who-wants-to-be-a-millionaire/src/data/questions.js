@@ -1,0 +1,92 @@
+export const questions = [
+  {
+    id: 1,
+    question: "What is the capital of France?",
+    answers: ["London", "Berlin", "Madrid", "Paris"],
+    correct: 3,
+  },
+  {
+    id: 2,
+    question: "What is the capital of Germany?",
+    answers: ["London", "Berlin", "Madrid", "Paris"],
+    correct: 1,
+  },
+  {
+    id: 3,
+    question: "What is the capital of Spain?",
+    answers: ["London", "Berlin", "Madrid", "Paris"],
+    correct: 2,
+  },
+  {
+    id: 4,
+    question: "What is the capital of the United Kingdom?",
+    answers: ["London", "Berlin", "Madrid", "Paris"],
+    correct: 0,
+  },
+  {
+    id: 5,
+    question: "What is the capital of the United States?",
+    answers: ["Washington D.C.", "Berlin", "Madrid", "Paris"],
+    correct: 0,
+  },
+  {
+    id: 6,
+    question: "What is the capital of Italy?",
+    answers: ["London", "Berlin", "Rome", "Paris"],
+    correct: 2,
+  },
+  {
+    id: 7,
+    question: "What is the capital of Japan?",
+    answers: ["London", "Berlin", "Madrid", "Tokyo"],
+    correct: 3,
+  },
+  {
+    id: 8,
+    question: "What is the capital of Australia?",
+    answers: ["London", "Berlin", "Canberra", "Paris"],
+    correct: 2,
+  },
+  {
+    id: 9,
+    question: "What is the capital of Brazil?",
+    answers: ["London", "Brasília", "Madrid", "Paris"],
+    correct: 1,
+  },
+  {
+    id: 10,
+    question: "What is the capital of Canada?",
+    answers: ["London", "Berlin", "Madrid", "Ottawa"],
+    correct: 3,
+  },
+  {
+    id: 11,
+    question: "What is the capital of China?",
+    answers: ["London", "Beijing", "Madrid", "Paris"],
+    correct: 1,
+  },
+  {
+    id: 12,
+    question: "What is the capital of India?",
+    answers: ["London", "Berlin", "New Delhi", "Paris"],
+    correct: 2,
+  },
+  {
+    id: 13,
+    question: "What is the capital of Russia?",
+    answers: ["London", "Berlin", "Moscow", "Paris"],
+    correct: 2,
+  },
+  {
+    id: 14,
+    question: "What is the capital of South Africa?",
+    answers: ["London", "Berlin", "Pretoria", "Paris"],
+    correct: 2,
+  },
+  {
+    id: 15,
+    question: "What is the capital of South Korea?",
+    answers: ["London", "Seoul", "Madrid", "Paris"],
+    correct: 1,
+  },
+];
