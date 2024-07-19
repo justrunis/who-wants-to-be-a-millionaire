@@ -128,3 +128,4 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+who-wants-to-be-a-millionaire/src/data/questions.js
