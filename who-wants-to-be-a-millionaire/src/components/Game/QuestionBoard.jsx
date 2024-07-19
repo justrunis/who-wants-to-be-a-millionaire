@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { questions } from "../../data/questions";
+import Button from "../UI/Button";
 
 export default function QuestionBoard({
   questionID,
@@ -119,7 +120,7 @@ export default function QuestionBoard({
       </div>
       <div className="grid grid-cols-2 gap-2">
         {filteredAnswers.map((option, index) => (
-          <motion.button
+          <Button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             key={index}
@@ -132,13 +133,17 @@ export default function QuestionBoard({
             }`}
             disabled={!option} // Disable empty buttons
           >
-            {option}
-            {audiencePoll && (
-              <div className="text-xs text-base-content italic">
-                {audiencePoll[index]}% voted
-              </div>
+            {option && (
+              <>
+                {String.fromCharCode(65 + index)}. {option}
+                {audiencePoll && (
+                  <div className="text-xs text-base-content italic">
+                    {audiencePoll[index]}% voted
+                  </div>
+                )}
+              </>
             )}
-          </motion.button>
+          </Button>
         ))}
       </div>
     </div>

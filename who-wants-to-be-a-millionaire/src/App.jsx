@@ -4,6 +4,7 @@ import { useState } from "react";
 import Start from "./pages/Start";
 import Header from "./components/UI/Header";
 import Game from "./pages/Game";
+import About from "./pages/About";
 
 function App() {
   const [name, setName] = useState("");
@@ -23,6 +24,7 @@ function App() {
               element={<Start onNameChange={handleNameChange} />}
             />
             <Route path="/game" element={<Game playerName={name} />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
       </BrowserRouter>

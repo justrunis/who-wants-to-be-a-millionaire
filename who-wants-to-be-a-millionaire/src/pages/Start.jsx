@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Input from "../components/UI/Input";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/UI/Button";
 
 export default function Start({ onNameChange }) {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function Start({ onNameChange }) {
       >
         <h1 className="text-4xl text-center">Who Wants to Be a Millionaire?</h1>
         <form
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col gap-2 items-center justify-center"
           onSubmit={handleNameSubmit}
         >
           <Input
@@ -35,15 +36,12 @@ export default function Start({ onNameChange }) {
             className="mt-2 bg-base-100 text-base-content p-2 rounded-lg"
             delay={0.4}
           />
-          <motion.button
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+          <Button
             type="submit"
-            className="mt-4 bg-base-100 text-base-content p-2 rounded-lg"
+            className="p-2 bg-base-100 text-base-content rounded-lg"
           >
             Start the game
-          </motion.button>
+          </Button>
         </form>
       </motion.div>
     </div>

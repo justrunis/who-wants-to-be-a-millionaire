@@ -30,7 +30,7 @@ export default function Game({ playerName }) {
   const [showVictoryModal, setShowVictoryModal] = useState(false);
 
   useEffect(() => {
-    // play();
+    play();
   }, [play]);
 
   function handleSelectedOption(option) {
