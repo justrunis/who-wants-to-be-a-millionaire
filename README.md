@@ -1,4 +1,4 @@
-# who-wants-to-be-a-millionaire# Who Wants to Be a Millionaire
+# Who Wants to Be a Millionaire
 
 Welcome to the "Who Wants to Be a Millionaire" game!
 
