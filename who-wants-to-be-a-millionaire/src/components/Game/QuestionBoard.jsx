@@ -15,11 +15,13 @@ export default function QuestionBoard({
   // State to store the original and filtered answers
   const [originalAnswers, setOriginalAnswers] = useState(question.answers);
   const [filteredAnswers, setFilteredAnswers] = useState(question.answers);
+  const [audiencePoll, setAudiencePoll] = useState(null); // State to store audience poll percentages
 
   useEffect(() => {
-    // Reset the filtered answers when the question changes
+    // Reset the filtered answers and audience poll when the question changes
     setOriginalAnswers(question.answers);
     setFilteredAnswers(question.answers);
+    setAudiencePoll(null);
     setSelectedOption(null); // Clear selected option when question changes
   }, [questionID]);
 
@@ -31,7 +33,7 @@ export default function QuestionBoard({
     } else if (hint === "phoneAFriend") {
       // Do nothing for now
     } else if (hint === "askTheAudience") {
-      // Leave empty for now
+      handleAskTheAudience();
     }
   }, [hint]);
 
@@ -59,6 +61,47 @@ export default function QuestionBoard({
     );
 
     setFilteredAnswers(newAnswers);
+  };
+
+  const handleAskTheAudience = () => {
+    const correctAnswerIndex = question.correct;
+
+    // Generate random percentages for incorrect answers
+    let incorrectPercentages = new Array(question.answers.length).fill(0);
+    incorrectPercentages[correctAnswerIndex] = 0; // Placeholder for correct answer
+
+    let totalPercentage = 0;
+    for (let i = 0; i < incorrectPercentages.length; i++) {
+      if (i !== correctAnswerIndex) {
+        // Random percentage between 5 and 20
+        const randomPercentage = Math.floor(Math.random() * 16) + 5;
+        incorrectPercentages[i] = randomPercentage;
+        totalPercentage += randomPercentage;
+      }
+    }
+
+    // Ensure the correct answer gets the highest percentage
+    const correctAnswerPercentage = Math.min(60, 100 - totalPercentage);
+    incorrectPercentages[correctAnswerIndex] = correctAnswerPercentage;
+
+    // Adjust percentages to sum up to 100
+    let adjustment = 100 - totalPercentage - correctAnswerPercentage;
+    if (adjustment > 0) {
+      // Distribute adjustment among incorrect answers
+      let adjustmentIndices = incorrectPercentages
+        .map((_, index) => index)
+        .filter((index) => index !== correctAnswerIndex);
+      adjustmentIndices = shuffleArray(adjustmentIndices);
+
+      for (let i = 0; i < adjustmentIndices.length; i++) {
+        if (adjustment <= 0) break;
+        const addPercentage = Math.min(adjustment, 10); // Add up to 10% per incorrect answer
+        incorrectPercentages[adjustmentIndices[i]] += addPercentage;
+        adjustment -= addPercentage;
+      }
+    }
+
+    setAudiencePoll(incorrectPercentages);
   };
 
   const shuffleArray = (array) => {
@@ -90,6 +133,11 @@ export default function QuestionBoard({
             disabled={!option} // Disable empty buttons
           >
             {option}
+            {audiencePoll && (
+              <div className="text-xs text-base-content italic">
+                {audiencePoll[index]}% voted
+              </div>
+            )}
           </motion.button>
         ))}
       </div>
