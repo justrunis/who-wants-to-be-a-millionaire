@@ -99,7 +99,7 @@ export default function Game({ playerName }) {
                 : "€0"
             }
             open={showModal}
-            onClose={() => setShowModal(false)}
+            onClose={RestartGame}
             onRestart={RestartGame}
           />
         )}
