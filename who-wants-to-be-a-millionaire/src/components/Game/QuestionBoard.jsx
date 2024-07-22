@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { questions } from "../../data/questions";
 import Button from "../UI/Button";
+import { useSelector } from "react-redux";
 
 export default function QuestionBoard({
   questionID,
@@ -11,6 +11,7 @@ export default function QuestionBoard({
   setSelectedOption,
   hint,
 }) {
+  const questions = useSelector((state) => state.questions.questions);
   const question = questions.find((q) => q.id === questionID);
 
   // State to store the original and filtered answers

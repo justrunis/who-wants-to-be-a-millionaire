@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import bgImage from "../assets/background.jpg";
 import Pyramid from "../components/Game/Pyramid";
 import useSound from "use-sound";
@@ -7,14 +6,14 @@ import correct from "../assets/src_sounds_correct.mp3";
 import wrong from "../assets/src_sounds_wrong.mp3";
 import { useEffect, useState } from "react";
 import QuestionBoard from "../components/Game/QuestionBoard";
-import { questions } from "../data/questions";
 import { moneyLevels } from "../data/money";
 import GameOverModal from "../components/Game/GameOverModal";
-import { useNavigate } from "react-router-dom";
 import Button from "../components/UI/Button";
+import { useSelector } from "react-redux";
 
 export default function Game({ playerName }) {
-  const navigate = useNavigate();
+  const questions = useSelector((state) => state.questions.questions);
+  console.log(questions);
 
   const [play] = useSound(startSound);
   const [playCorrect] = useSound(correct);
@@ -124,6 +123,7 @@ export default function Game({ playerName }) {
           selectedAnswerStyle={selectedAnswerStyle}
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
+          questions={questions}
           hint={currentHint}
         />
       </div>

@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "question": "What is the largest planet in our solar system?",
+    "answers": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "correct": 2
+  },
+  {
+    "id": 2,
+    "question": "What is the chemical symbol for water?",
+    "answers": ["O2", "H2O", "CO2", "HO"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "answers": [
+      "Charles Dickens",
+      "Mark Twain",
+      "William Shakespeare",
+      "Ernest Hemingway"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 4,
+    "question": "What is the hardest natural substance on Earth?",
+    "answers": ["Gold", "Iron", "Diamond", "Platinum"],
+    "correct": 2
+  },
+  {
+    "id": 5,
+    "question": "What is the speed of light?",
+    "answers": ["300,000 km/s", "150,000 km/s", "450,000 km/s", "600,000 km/s"],
+    "correct": 0
+  },
+  {
+    "id": 6,
+    "question": "Who was the first President of the United States?",
+    "answers": [
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "George Washington",
+      "John Adams"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 7,
+    "question": "Which element has the atomic number 1?",
+    "answers": ["Oxygen", "Hydrogen", "Helium", "Carbon"],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "question": "Which planet is known as the Red Planet?",
+    "answers": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "correct": 1
+  },
+  {
+    "id": 9,
+    "question": "What is the tallest mountain in the world?",
+    "answers": ["K2", "Mount Everest", "Kangchenjunga", "Lhotse"],
+    "correct": 1
+  },
+  {
+    "id": 10,
+    "question": "Who painted the Mona Lisa?",
+    "answers": [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Claude Monet"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 11,
+    "question": "What is the main ingredient in guacamole?",
+    "answers": ["Tomato", "Onion", "Avocado", "Cucumber"],
+    "correct": 2
+  },
+  {
+    "id": 12,
+    "question": "What is the capital of Canada?",
+    "answers": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
+    "correct": 2
+  },
+  {
+    "id": 13,
+    "question": "What is the largest mammal?",
+    "answers": ["Elephant", "Blue whale", "Giraffe", "Hippopotamus"],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "question": "Which language is the most spoken worldwide?",
+    "answers": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+    "correct": 2
+  },
+  {
+    "id": 15,
+    "question": "What is the primary ingredient in chocolate?",
+    "answers": ["Milk", "Cocoa", "Sugar", "Butter"],
+    "correct": 1
+  }
+]

@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { AiFillHome, AiFillQuestionCircle } from "react-icons/ai";
+import {
+  AiFillHome,
+  AiFillQuestionCircle,
+  AiOutlineUpload,
+} from "react-icons/ai";
 import logo from "../../assets/icon.png";
 import { motion } from "framer-motion";
 
@@ -83,6 +87,13 @@ export default function Header() {
           >
             <AiFillHome className="inline mr-1" />
             Home
+          </NavLink>
+          <NavLink
+            to="/question-upload"
+            className="flex flex-row justify-center items-center text-base-content hover:text-accent text-sm lg:text-lg font-bold mr-5"
+          >
+            <AiOutlineUpload className="inline mr-1" />
+            Question Upload
           </NavLink>
           <NavLink
             to="/about"

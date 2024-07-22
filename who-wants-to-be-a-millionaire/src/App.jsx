@@ -1,10 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./store/index";
 
 import Start from "./pages/Start";
 import Header from "./components/UI/Header";
 import Game from "./pages/Game";
 import About from "./pages/About";
+import QuestionUpload from "./pages/QuestionUpload";
 
 function App() {
   const [name, setName] = useState("");
@@ -14,7 +17,7 @@ function App() {
   }
 
   return (
-    <>
+    <Provider store={store}>
       <BrowserRouter>
         <main className="flex flex-col max-h-screen">
           <Header />
@@ -25,10 +28,11 @@ function App() {
             />
             <Route path="/game" element={<Game playerName={name} />} />
             <Route path="/about" element={<About />} />
+            <Route path="/question-upload" element={<QuestionUpload />} />
           </Routes>
         </main>
       </BrowserRouter>
-    </>
+    </Provider>
   );
 }
 
