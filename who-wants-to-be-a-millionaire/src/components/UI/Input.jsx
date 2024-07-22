@@ -19,16 +19,18 @@ export default function Input({
 
   return (
     <div className={containerClass}>
-      <motion.label
-        className={`block text-sm font-bold ${labelClass}`}
-        htmlFor={id}
-        initial="hidden"
-        animate="visible"
-        variants={inputVariants}
-        transition={{ delay }}
-      >
-        {label}
-      </motion.label>
+      {label && (
+        <motion.label
+          className={`block text-sm font-bold ${labelClass}`}
+          htmlFor={id}
+          initial="hidden"
+          animate="visible"
+          variants={inputVariants}
+          transition={{ delay }}
+        >
+          {label}
+        </motion.label>
+      )}
       {isTextArea ? (
         <motion.textarea
           id={id}

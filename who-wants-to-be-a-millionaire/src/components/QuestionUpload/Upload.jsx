@@ -21,7 +21,7 @@ export default function Upload({
         type="file"
         accept={fileTypes}
         onChange={onFileUpload}
-        className="bg-base-300 text-white font-bold py-2 px-4 rounded"
+        className="file-input bg-base-300 text-white font-bold py-2 px-4 rounded"
         {...props}
       />
       <p>

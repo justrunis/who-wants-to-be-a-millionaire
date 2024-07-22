@@ -4,6 +4,7 @@ import {
   AiFillHome,
   AiFillQuestionCircle,
   AiOutlineUpload,
+  AiOutlineFileAdd,
 } from "react-icons/ai";
 import logo from "../../assets/icon.png";
 import { motion } from "framer-motion";
@@ -94,6 +95,13 @@ export default function Header() {
           >
             <AiOutlineUpload className="inline mr-1" />
             Question Upload
+          </NavLink>
+          <NavLink
+            to="question-creation"
+            className="flex flex-row justify-center items-center text-base-content hover:text-accent text-sm lg:text-lg font-bold mr-5"
+          >
+            <AiOutlineFileAdd className="inline mr-1" />
+            Question Creation
           </NavLink>
           <NavLink
             to="/about"

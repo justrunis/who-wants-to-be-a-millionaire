@@ -85,7 +85,7 @@ export default function QuestionUpload() {
           className="bg-accent text-white font-bold py-2 px-4 rounded-r"
           onClick={handleSubmit}
         >
-          Start Game
+          Upload Questions
         </Button>
       </motion.div>
     </div>
