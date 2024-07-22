@@ -13,7 +13,6 @@ import { useSelector } from "react-redux";
 
 export default function Game({ playerName }) {
   const questions = useSelector((state) => state.questions.questions);
-  console.log(questions);
 
   const [play] = useSound(startSound);
   const [playCorrect] = useSound(correct);

@@ -5,37 +5,66 @@ import Button from "../components/UI/Button";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { questionsAction } from "../store/slices/questions";
+import UploadInstructions from "../components/QuestionUpload/UploadInstructions";
 
 export default function QuestionUpload() {
   const [questions, setQuestions] = useState([]);
+  const [file, setFile] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function handleFileUpload(e) {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        try {
-          const questions = JSON.parse(e.target.result);
-          // validate the questions object later
+    setFile(e.target.files[0]);
+  }
 
-          setQuestions(questions);
-        } catch (error) {
-          console.error(error);
-        }
-      };
-      reader.readAsText(file);
+  function validateQuestions(questions) {
+    if (!Array.isArray(questions) || questions.length !== 15) {
+      return "Please upload a file with 15 questions.";
     }
+
+    for (let question of questions) {
+      if (
+        typeof question.id !== "number" ||
+        typeof question.question !== "string" ||
+        !Array.isArray(question.answers) ||
+        question.answers.length !== 4 ||
+        question.answers.some((answer) => typeof answer !== "string") ||
+        typeof question.correct !== "number" ||
+        question.correct < 0 ||
+        question.correct >= question.answers.length
+      ) {
+        return "Invalid question format.";
+      }
+    }
+
+    return null;
   }
 
   function handleSubmit() {
-    if (questions.length === 0) {
-      alert("Please upload a file first");
+    if (!file) {
+      alert("Please upload a file first.");
       return;
     }
-    dispatch(questionsAction.setQuestions(questions));
-    navigate("/");
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const questions = JSON.parse(e.target.result);
+        const validationError = validateQuestions(questions);
+        if (validationError) {
+          alert(validationError);
+          return;
+        }
+
+        setQuestions(questions);
+        dispatch(questionsAction.setQuestions(questions));
+        navigate("/");
+      } catch (error) {
+        alert("Error parsing JSON: " + error.message);
+        console.error(error);
+      }
+    };
+    reader.readAsText(file);
   }
 
   return (
@@ -46,31 +75,7 @@ export default function QuestionUpload() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-3xl text-center text-accent font-bold mt-10">
-          Question Upload
-        </h2>
-        <p>
-          Please upload a JSON file for the questions. The file should be in the
-          following format:
-        </p>
-        <pre className="bg-gray-300 p-4 rounded-lg text-sm text-base-300">
-          {`{
-    "questions": [
-        {
-            "id": 1,
-            "question": "What is the capital of France?",
-            "answers": ["Paris", "London", "Berlin", "Madrid"],
-            "correctAnswer": 0
-        },
-        {
-            "id": 2,
-            "question": "What is the capital of Spain?",
-            "answers": ["Paris", "London", "Berlin", "Madrid"],
-            "correctAnswer": 3
-        }
-    ]
-}`}
-        </pre>
+        <UploadInstructions />
         <Upload
           onFileUpload={handleFileUpload}
           fileTypes=".json"
