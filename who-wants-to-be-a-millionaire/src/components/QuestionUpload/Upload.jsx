@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Upload({
   onFileUpload,
@@ -7,6 +8,8 @@ export default function Upload({
   className = "flex flex-col gap-2 items-center justify-center font-bold p-18 rounded-lg bg-base-200 bg-opacity-50",
   ...props
 }) {
+  const { t } = useTranslation("global");
+
   return (
     <motion.div
       className={className}
@@ -25,7 +28,7 @@ export default function Upload({
         {...props}
       />
       <p>
-        Allowed file types:{" "}
+        {t("questionUpload.uploadInstructions")}{" "}
         {fileTypes
           .split(".")
           .filter((type) => type)

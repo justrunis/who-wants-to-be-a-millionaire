@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import Input from "../components/UI/Input";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/UI/Button";
+import { useTranslation } from "react-i18next";
 
 export default function Start({ onNameChange }) {
   const navigate = useNavigate();
+
+  const { t } = useTranslation("global");
 
   function handleNameSubmit(event) {
     event.preventDefault();
@@ -21,15 +24,15 @@ export default function Start({ onNameChange }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-4xl text-center">Who Wants to Be a Millionaire?</h1>
+        <h1 className="text-4xl text-center">{t("header.title")}</h1>
         <form
           className="flex flex-col gap-2 items-center justify-center"
           onSubmit={handleNameSubmit}
         >
           <Input
-            label="Enter your name"
+            label={t("start.name")}
             labelClass="text-center"
-            placeholder="Your name"
+            placeholder={t("start.namePlaceholder")}
             id="name"
             type="text"
             containerClass="mt-4"
@@ -40,7 +43,7 @@ export default function Start({ onNameChange }) {
             type="submit"
             className="p-2 bg-base-100 text-base-content rounded-lg"
           >
-            Start the game
+            {t("start.start")}
           </Button>
         </form>
       </motion.div>

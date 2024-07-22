@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { questionsAction } from "../store/slices/questions";
 import QuestionList from "../components/QuestionCreation/QuestionList";
 import { DragDropContext } from "react-beautiful-dnd";
+import { useTranslation } from "react-i18next";
 
 export default function QuestionCreation() {
   const startingQuestions = useSelector((state) => state.questions.questions);
   const dispatch = useDispatch();
+
+  const { t } = useTranslation("global");
 
   const [questions, setQuestions] = useState(startingQuestions);
 
@@ -96,7 +99,7 @@ export default function QuestionCreation() {
       transition={{ duration: 1 }}
     >
       <h2 className="text-3xl text-center text-accent font-bold mt-10">
-        Question Creation
+        {t("questionCreation.questionsCreation")}
       </h2>
       <form
         className="flex flex-col justify-center gap-5"

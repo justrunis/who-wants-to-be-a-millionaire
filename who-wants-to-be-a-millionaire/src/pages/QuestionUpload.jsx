@@ -6,12 +6,16 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { questionsAction } from "../store/slices/questions";
 import UploadInstructions from "../components/QuestionUpload/UploadInstructions";
+import { useTranslation } from "react-i18next";
 
 export default function QuestionUpload() {
   const [questions, setQuestions] = useState([]);
   const [file, setFile] = useState(null);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { t } = useTranslation("global");
 
   function handleFileUpload(e) {
     setFile(e.target.files[0]);
@@ -85,7 +89,7 @@ export default function QuestionUpload() {
           className="bg-accent text-white font-bold py-2 px-4 rounded-r"
           onClick={handleSubmit}
         >
-          Upload Questions
+          {t("questionUpload.uploadQuestions")}
         </Button>
       </motion.div>
     </div>

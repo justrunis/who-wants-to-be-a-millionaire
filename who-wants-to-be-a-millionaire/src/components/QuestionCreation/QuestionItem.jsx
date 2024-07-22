@@ -1,6 +1,7 @@
 import Input from "../UI/Input";
 import { motion } from "framer-motion";
 import { MdOutlineCancel } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 export default function QuestionItem({
   provided,
@@ -13,6 +14,8 @@ export default function QuestionItem({
   const inputClassName =
     "bg-base-100 rounded-lg border-2 border-accent h-10 w-50 p-2";
   const inputLabelClassName = "text-accent font-bold";
+
+  const { t } = useTranslation("global");
 
   const handleRemoveQuestion = () => {
     // add confirmation alert
@@ -35,10 +38,10 @@ export default function QuestionItem({
         onClick={() => removeQuestion(questionIndex)}
       />
       <h1 className="text-2xl text-start text-accent font-bold">
-        Question {questionIndex + 1}
+        {t("questionCreation.question")} {questionIndex + 1}
       </h1>
       <Input
-        label={`Question ${questionIndex + 1}`}
+        label={`${t("questionCreation.question")} ${questionIndex + 1}`}
         labelClass={inputLabelClassName}
         isTextArea={true}
         type="text"
@@ -54,7 +57,7 @@ export default function QuestionItem({
             className="flex flex-row items-center justify-center ml-5 lg:ml-0 gap-2"
           >
             <Input
-              label={`Answer ${answerIndex + 1}`}
+              label={`${t("questionCreation.answer")} ${answerIndex + 1}`}
               labelClass={inputLabelClassName}
               type="text"
               id={`answer${answerIndex}`}

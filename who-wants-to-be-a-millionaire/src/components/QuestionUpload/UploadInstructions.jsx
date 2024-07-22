@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function UploadInstructions() {
+  const { t } = useTranslation("global");
+
   return (
     <motion.div
       className="flex flex-col gap-2 items-center justify-center font-bold"
@@ -9,12 +12,9 @@ export default function UploadInstructions() {
       transition={{ duration: 1 }}
     >
       <h2 className="text-3xl text-center text-accent font-bold mt-10">
-        Question Upload
+        {t("questionUpload.questionUpload")}
       </h2>
-      <p>
-        Please upload a JSON file for the questions. The file should be in the
-        following format:
-      </p>
+      <p>{t("questionUpload.questionUploadText1")}</p>
       <pre className="bg-gray-300 p-4 rounded-lg text-sm text-base-300">
         {`{
     "questions": [
@@ -34,13 +34,8 @@ export default function UploadInstructions() {
 }`}
       </pre>
       <ul className="flex flex-col gap-2 text-left bg-gray-300 text-base-300 p-4 rounded-lg">
-        <li>
-          The <code>answer</code> field should be the index of the correct
-          answer in the <code>answers</code> array (starting from 0).
-        </li>
-        <li>
-          The array must have 15 questions, each with a unique <code>id</code>.
-        </li>
+        <li>{t("questionUpload.questionUploadText2")}</li>
+        <li>{t("questionUpload.questionUploadText3")}</li>
       </ul>
     </motion.div>
   );

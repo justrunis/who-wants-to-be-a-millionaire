@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "Kas nori tapti milijonieriu",
+    "home": "Pradžia",
+    "questionUpload": "Klausimų įkėlimas",
+    "questionCreation": "Klausimų kūrimas",
+    "about": "Apie",
+    "language": "Kalba"
+  },
+  "start": {
+    "name": "Įveskite savo vardą",
+    "namePlaceholder": "Jūsų vardas",
+    "start": "Pradėti žaidimą"
+  },
+  "questionUpload": {
+    "questionUpload": "Klausimų įkėlimas",
+    "questionUploadText1": "Prašome įkelti JSON failą su klausimais. Failas turi būti tokio formato:",
+    "questionUploadText2": "Failas turi turėti objektų masyvą, kuriame kiekvienas objektas atitinka klausimą.",
+    "questionUploadText3": "Masyvas turi turėti 15 klausimų, kiekvienas su unikaliu ID.",
+    "uploadInstructions": "Leidžiami failų tipai:",
+    "uploadQuestions": "Įkelti klausimus"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "title": "Who Wants to Be a Millionaire",
+    "home": "Home",
+    "questionUpload": "Questions Upload",
+    "questionCreation": "Questions Creation",
+    "about": "About",
+    "language": "Language"
+  },
+  "start": {
+    "name": "Enter your name",
+    "namePlaceholder": "Your name",
+    "start": "Start game"
+  },
+  "questionUpload": {
+    "questionUpload": "Question Upload",
+    "questionUploadText1": "Please upload a JSON file for the questions. The file should be in the following format:",
+    "questionUploadText2": "The file should contain an array of objects, where each object represents a question.",
+    "questionUploadText3": "The array must have 15 questions, each with a unique id.",
+    "uploadInstructions": "Allowed file types:",
+    "uploadQuestions": "Upload Questions"
+  },
+  "questionCreation": {
+    "questionsCreation": "Questions Creation",
+    "question": "Question",
+    "answer": "Answer"
+  }
+}
