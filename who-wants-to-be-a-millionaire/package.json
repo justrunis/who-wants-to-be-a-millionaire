@@ -12,6 +12,8 @@
   "dependencies": {
     "@headlessui/react": "^2.1.2",
     "@reduxjs/toolkit": "^2.2.6",
+    "@tanstack/react-query": "^5.51.11",
+    "axios": "^1.7.2",
     "framer-motion": "^11.3.7",
     "i18next": "^23.12.2",
     "react": "^18.3.1",

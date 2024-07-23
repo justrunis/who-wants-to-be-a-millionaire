@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { questionsAction } from "../store/slices/questions";
 import UploadInstructions from "../components/QuestionUpload/UploadInstructions";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@tanstack/react-query";
+import { fetchQuestions } from "../api/http";
 
 export default function QuestionUpload() {
   const [questions, setQuestions] = useState([]);
@@ -14,6 +16,11 @@ export default function QuestionUpload() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { data, error, isError, isLoading } = useQuery({
+    queryKey: ["random-questions"],
+    queryFn: fetchQuestions,
+  });
 
   const { t } = useTranslation("global");
 
@@ -71,6 +78,32 @@ export default function QuestionUpload() {
     reader.readAsText(file);
   }
 
+  function generateRandomQuestions() {
+    if (data) {
+      const formattedData = data.results.map((question, index) => {
+        const allAnswers = [
+          ...question.incorrect_answers,
+          question.correct_answer,
+        ];
+
+        const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.5);
+
+        const correctAnswerIndex = shuffledAnswers.indexOf(
+          question.correct_answer
+        );
+
+        return {
+          id: index + 1,
+          question: question.question,
+          answers: shuffledAnswers,
+          correct: correctAnswerIndex,
+        };
+      });
+      dispatch(questionsAction.setQuestions(formattedData));
+      navigate("/");
+    }
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
       <motion.div
@@ -85,12 +118,20 @@ export default function QuestionUpload() {
           fileTypes=".json"
           className="flex flex-col gap-2 items-center justify-center font-bold p-18 rounded-lg bg-base-300"
         />
-        <Button
-          className="bg-accent text-white font-bold py-2 px-4 rounded-lg mt-4"
-          onClick={handleSubmit}
-        >
-          {t("questionUpload.uploadQuestions")}
-        </Button>
+        <div className="flex flex-col lg:flex-row gap-2 items-center justify-center">
+          <Button
+            className="bg-accent text-white font-bold py-2 px-4 rounded-lg mt-4"
+            onClick={handleSubmit}
+          >
+            {t("questionUpload.uploadQuestions")}
+          </Button>
+          <Button
+            className="bg-accent text-white font-bold py-2 px-4 rounded-lg mt-4"
+            onClick={generateRandomQuestions}
+          >
+            Generate random questions
+          </Button>
+        </div>
       </motion.div>
     </div>
   );

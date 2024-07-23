@@ -14,7 +14,7 @@ export default function QuestionItem({
   delay = 0,
 }) {
   const inputClassName =
-    "bg-base-100 rounded-lg border-2 border-accent h-10 w-50 p-2";
+    "bg-base-100 rounded-lg border-2 border-accent h-10 w-50 p-2 lg:my-1";
   const inputLabelClassName = "text-accent font-bold";
 
   const { t } = useTranslation("global");
@@ -74,6 +74,7 @@ export default function QuestionItem({
               type="text"
               id={`answer${answerIndex}`}
               className={inputClassName}
+              isTextArea={true}
               value={answer}
               onChange={(e) => handleInputChange(e, questionIndex, answerIndex)}
             />
@@ -83,7 +84,7 @@ export default function QuestionItem({
               id={String(answerIndex)}
               checked={question.correct === answerIndex}
               onChange={(e) => handleInputChange(e, questionIndex, answerIndex)}
-              containerClass="self-end"
+              containerClass="self-center"
             />
           </div>
         ))}

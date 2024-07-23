@@ -120,7 +120,10 @@ export default function QuestionBoard({
   return (
     <div className="w-1/2 p-50">
       <div className="flex flex-col items-center justify-center gap-4 bg-base-100 p-8 rounded-lg border-2 border-secondary mb-5">
-        <h2 className="text-2xl text-center">{question.question}</h2>
+        <h2
+          className="text-2xl text-center"
+          dangerouslySetInnerHTML={{ __html: question.question }}
+        ></h2>
       </div>
       <div className="grid grid-cols-2 gap-2">
         {filteredAnswers.map((option, index) => (
@@ -139,7 +142,8 @@ export default function QuestionBoard({
           >
             {option && (
               <>
-                {String.fromCharCode(65 + index)}. {option}
+                {String.fromCharCode(65 + index)}.{" "}
+                <span dangerouslySetInnerHTML={{ __html: option }} />
                 {audiencePoll && (
                   <div className="text-xs text-base-content italic">
                     {audiencePoll[index]}% {t("game.voted")}

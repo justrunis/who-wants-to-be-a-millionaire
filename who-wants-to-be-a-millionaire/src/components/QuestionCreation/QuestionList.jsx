@@ -23,7 +23,7 @@ export default function QuestionList({
                   questionIndex={questionIndex}
                   handleInputChange={handleInputChange}
                   removeQuestion={removeQuestion}
-                  delay={questionIndex * 0.4}
+                  delay={questionIndex * 0.2}
                 />
               )}
             </Draggable>
