@@ -23,7 +23,7 @@ export default function QuestionUpload() {
 
   function validateQuestions(questions) {
     if (!Array.isArray(questions) || questions.length !== 15) {
-      return "Please upload a file with 15 questions.";
+      return t("alert.questionCountError");
     }
 
     for (let question of questions) {
@@ -46,7 +46,7 @@ export default function QuestionUpload() {
 
   function handleSubmit() {
     if (!file) {
-      alert("Please upload a file first.");
+      alert(t("alert.noFileError"));
       return;
     }
 
@@ -64,7 +64,7 @@ export default function QuestionUpload() {
         dispatch(questionsAction.setQuestions(questions));
         navigate("/");
       } catch (error) {
-        alert("Error parsing JSON: " + error.message);
+        alert(t("alert.JSONError") + error.message);
         console.error(error);
       }
     };
@@ -72,9 +72,9 @@ export default function QuestionUpload() {
   }
 
   return (
-    <div className="flex items-center justify-center max-h-screen">
+    <div className="flex items-center justify-center min-h-screen p-4">
       <motion.div
-        className="flex flex-col gap-2 items-center justify-center font-bold p-28 rounded-lg bg-gray-200 bg-opacity-50"
+        className="flex flex-col gap-2 items-center justify-center font-bold mt-2 p-4 lg:p-28 rounded-lg bg-gray-200 bg-opacity-50 w-full max-w-lg lg:max-w-5xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -83,10 +83,10 @@ export default function QuestionUpload() {
         <Upload
           onFileUpload={handleFileUpload}
           fileTypes=".json"
-          className="flex flex-col gap-2 items-center justify-center bg-base-300 rounded-l shadow-lg"
+          className="flex flex-col gap-2 items-center justify-center font-bold p-18 rounded-lg bg-base-300"
         />
         <Button
-          className="bg-accent text-white font-bold py-2 px-4 rounded-r"
+          className="bg-accent text-white font-bold py-2 px-4 rounded-lg mt-4"
           onClick={handleSubmit}
         >
           {t("questionUpload.uploadQuestions")}

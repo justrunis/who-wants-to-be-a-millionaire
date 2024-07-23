@@ -5,6 +5,7 @@ import { questionsAction } from "../store/slices/questions";
 import QuestionList from "../components/QuestionCreation/QuestionList";
 import { DragDropContext } from "react-beautiful-dnd";
 import { useTranslation } from "react-i18next";
+import ConfirmationModal from "../components/QuestionCreation/ConfirmationModal";
 
 export default function QuestionCreation() {
   const startingQuestions = useSelector((state) => state.questions.questions);
@@ -13,6 +14,7 @@ export default function QuestionCreation() {
   const { t } = useTranslation("global");
 
   const [questions, setQuestions] = useState(startingQuestions);
+  const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e, questionIndex, answerIndex = null) => {
     const { id, value, type } = e.target;
@@ -52,7 +54,7 @@ export default function QuestionCreation() {
         { question: "", answers: ["", "", "", ""], correct: 0 },
       ]);
     } else {
-      alert("You can only have a maximum of 15 questions.");
+      alert(t("alert.maxQuestionError"));
     }
   };
 
@@ -98,12 +100,24 @@ export default function QuestionCreation() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      {showModal && (
+        <ConfirmationModal
+          open={showModal}
+          onClose={() => setShowModal(false)}
+          title={t("questionCreation.confirmationClearMessage")}
+          onConfirm={() => {
+            setQuestions([]);
+            setShowModal(false);
+          }}
+        >
+          <p>{t("questionCreation.modalText")}</p>
+        </ConfirmationModal>
+      )}
       <h2 className="text-3xl text-center text-accent font-bold mt-10">
         {t("questionCreation.questionsCreation")}
       </h2>
-      <div className="w-80 lg:w-1/4 bg-base-100 p-6 rounded-lg border-2 border-accent">
+      <div className="w-80 lg:w-1/3 bg-gray-500 p-6 rounded-lg border-2 border-accent">
         <p className="text-center text-accent">
-          {/** Explanation of how to create questions */}
           {t("questionCreation.instructions")}
         </p>
       </div>
@@ -111,32 +125,49 @@ export default function QuestionCreation() {
         className="flex flex-col justify-center gap-5"
         onSubmit={handleSubmit}
       >
-        <div className="mb-40">
-          <DragDropContext onDragEnd={handleDragEnd}>
-            <QuestionList
-              questions={questions}
-              handleInputChange={handleInputChange}
-              removeQuestion={removeQuestion}
-            />
-          </DragDropContext>
-        </div>
-        <div className="fixed bottom-0 left-0 right-0 flex flex-row justify-center gap-2 bg-gray-500 p-6">
+        {questions.length > 0 ? (
+          <div className="mb-40">
+            <DragDropContext onDragEnd={handleDragEnd}>
+              <QuestionList
+                questions={questions}
+                handleInputChange={handleInputChange}
+                removeQuestion={removeQuestion}
+              />
+            </DragDropContext>
+          </div>
+        ) : (
+          <div className="text-center text-accent">
+            {t("questionCreation.noQuestions")}
+          </div>
+        )}
+        <div className="fixed bottom-0 left-0 right-0 flex flex-col lg:flex-row justify-center gap-2 bg-gray-500 p-2 lg:p-6">
           <button
             type="submit"
-            className="btn btn-success"
+            className="btn btn-success btn-sm lg:btn-md"
             onClick={handleSubmit}
           >
             {t("questionCreation.save")}
           </button>
           <button
             type="button"
-            className="btn btn-warning"
+            className="btn btn-warning btn-sm lg:btn-md"
             onClick={handleJsonGeneration}
           >
             {t("questionCreation.generateJson")}
           </button>
-          <button type="button" className="btn btn-info" onClick={addQuestion}>
+          <button
+            type="button"
+            className="btn btn-info btn-sm lg:btn-md"
+            onClick={addQuestion}
+          >
             {t("questionCreation.addQuestion")}
+          </button>
+          <button
+            type="button"
+            className="btn btn-error btn-sm lg:btn-md"
+            onClick={() => setShowModal(true)}
+          >
+            {t("questionCreation.clearQuestions")}
           </button>
         </div>
       </form>

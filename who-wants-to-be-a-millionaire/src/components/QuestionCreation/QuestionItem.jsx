@@ -2,6 +2,8 @@ import Input from "../UI/Input";
 import { motion } from "framer-motion";
 import { MdOutlineCancel } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import ConfirmationModal from "./ConfirmationModal";
+import { useState } from "react";
 
 export default function QuestionItem({
   provided,
@@ -16,9 +18,11 @@ export default function QuestionItem({
   const inputLabelClassName = "text-accent font-bold";
 
   const { t } = useTranslation("global");
+  const [showModal, setShowModal] = useState(false);
 
   const handleRemoveQuestion = () => {
-    // add confirmation alert
+    removeQuestion(questionIndex);
+    setShowModal(false);
   };
 
   return (
@@ -35,11 +39,19 @@ export default function QuestionItem({
       <MdOutlineCancel
         className="absolute top-2 right-2 text-red-600 cursor-pointer"
         size={24}
-        onClick={() => removeQuestion(questionIndex)}
+        onClick={() => setShowModal(true)}
       />
       <h1 className="text-2xl text-start text-accent font-bold">
         {t("questionCreation.question")} {questionIndex + 1}
       </h1>
+      {showModal && (
+        <ConfirmationModal
+          open={showModal}
+          onClose={() => setShowModal(false)}
+          onConfirm={handleRemoveQuestion}
+          title={t("questionCreation.confirmationClearQuestion")}
+        />
+      )}
       <Input
         label={`${t("questionCreation.question")} ${questionIndex + 1}`}
         labelClass={inputLabelClassName}

@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Upload({
   onFileUpload,
   fileTypes = ".json",
-  className = "flex flex-col gap-2 items-center justify-center font-bold p-18 rounded-lg bg-base-200 bg-opacity-50",
+  className = "flex flex-col gap-2 items-center justify-center font-bold p-4 lg:p-18 rounded-lg bg-base-200 bg-opacity-50",
   ...props
 }) {
   const { t } = useTranslation("global");
@@ -24,10 +23,10 @@ export default function Upload({
         type="file"
         accept={fileTypes}
         onChange={onFileUpload}
-        className="file-input bg-base-300 text-white font-bold py-2 px-4 rounded"
+        className="file-input bg-base-300 text-white font-bold py-2 px-4 rounded w-full max-w-xs"
         {...props}
       />
-      <p>
+      <p className="text-xs lg:text-base text-center my-2 lg:my-4">
         {t("questionUpload.uploadInstructions")}{" "}
         {fileTypes
           .split(".")

@@ -27,7 +27,11 @@
     "answer": "Answer",
     "save": "Save",
     "generateJson": "Generate JSON",
-    "addQuestion": "Add Question"
+    "addQuestion": "Add Question",
+    "noQuestions": "No questions available",
+    "clearQuestions": "Clear Questions",
+    "confirmationClearMessage": "Are you sure you want to clear all questions?",
+    "confirmationClearQuestion": "Are your sure you want to clear this question?"
   },
   "game": {
     "player": "Player:",
@@ -56,5 +60,11 @@
     "text4": "The app keeps track of the player's score and displays it at the end of the game. Players can choose to play again and try to beat their previous score.",
     "text5": "It is a fun and challenging game that tests the player's knowledge in a variety of categories.",
     "enjoyGame": "Enjoy the game and test your knowledge!"
+  },
+  "alert": {
+    "maxQuestionError": "You can only have a maximum of 15 questions",
+    "noFileError": "No file uploaded.",
+    "JSONError": "Error parsing JSON:",
+    "questionCountError": "Please upload a file with 15 questions."
   }
 }

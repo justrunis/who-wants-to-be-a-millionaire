@@ -5,7 +5,6 @@ export default function QuestionList({
   questions,
   handleInputChange,
   removeQuestion,
-  handleDragEnd,
 }) {
   return (
     <Droppable droppableId="questions">

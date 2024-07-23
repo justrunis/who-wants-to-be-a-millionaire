@@ -5,9 +5,9 @@ import "./index.css";
 
 import global_en from "./translations/en/global.json";
 import global_lt from "./translations/lt/global.json";
+import global_bg from "./translations/bg/global.json";
 
 import i18next from "i18next";
-import { interpolate } from "framer-motion";
 import { I18nextProvider } from "react-i18next";
 
 i18next.init({
@@ -19,6 +19,9 @@ i18next.init({
     },
     lt: {
       global: global_lt,
+    },
+    bg: {
+      global: global_bg,
     },
   },
 });

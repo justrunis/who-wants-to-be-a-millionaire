@@ -27,7 +27,11 @@
     "answer": "Atsakymas",
     "save": "Išsaugoti",
     "generateJson": "Generuoti JSON",
-    "addQuestion": "Pridėti klausimą"
+    "addQuestion": "Pridėti klausimą",
+    "noQuestions": "Nėra prieinamų klausimų",
+    "clearQuestions": "Išvalyti klausimus",
+    "confirmationClearMessage": "Ar tikrai norite išvalyti visus klausimus?",
+    "confirmationClearQuestion": "Ar tikrai norite išvalyti šį klausimą?"
   },
   "game": {
     "player": "Žaidėjas:",
@@ -56,5 +60,11 @@
     "text4": "Programa seka žaidėjo rezultatą ir rodo jį žaidimo pabaigoje. Žaidėjai gali pasirinkti žaisti dar kartą ir bandyti pagerinti savo ankstesnį rezultatą.",
     "text5": "Tai yra linksmas ir iššūkių kupinas žaidimas, kuris tikrina žaidėjo žinias įvairiose kategorijose.",
     "enjoyGame": "Mėgaukitės žaidimu ir išbandykite savo žinias!"
+  },
+  "alert": {
+    "maxQuestionError": "Galite turėti ne daugiau kaip 15 klausimų",
+    "noFileError": "Failas neįkeltas.",
+    "JSONError": "Klaida analizuojant JSON:",
+    "questionCountError": "Prašome įkelti failą su 15 klausimų."
   }
 }
