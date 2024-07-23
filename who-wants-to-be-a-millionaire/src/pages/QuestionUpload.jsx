@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Upload from "../components/QuestionUpload/Upload";
 import Button from "../components/UI/Button";
 import { useNavigate } from "react-router-dom";
@@ -13,13 +13,15 @@ import { fetchQuestions } from "../api/http";
 export default function QuestionUpload() {
   const [questions, setQuestions] = useState([]);
   const [file, setFile] = useState(null);
+  const [fetchEnabled, setFetchEnabled] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { data, error, isError, isLoading } = useQuery({
-    queryKey: ["random-questions"],
+    queryKey: ["random-questions", fetchEnabled],
     queryFn: fetchQuestions,
+    enabled: fetchEnabled,
   });
 
   const { t } = useTranslation("global");
@@ -79,7 +81,11 @@ export default function QuestionUpload() {
   }
 
   function generateRandomQuestions() {
-    if (data) {
+    setFetchEnabled(true); // Enable the query
+  }
+
+  useEffect(() => {
+    if (fetchEnabled && data) {
       const formattedData = data.results.map((question, index) => {
         const allAnswers = [
           ...question.incorrect_answers,
@@ -99,10 +105,12 @@ export default function QuestionUpload() {
           correct: correctAnswerIndex,
         };
       });
+
       dispatch(questionsAction.setQuestions(formattedData));
+      setFetchEnabled(false);
       navigate("/");
     }
-  }
+  }, [fetchEnabled, data, dispatch, navigate]);
 
   return (
     <div className="flex items-center justify-center min-h-screen p-4">

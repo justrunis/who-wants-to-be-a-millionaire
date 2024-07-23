@@ -14,28 +14,44 @@ export default function NavLinks() {
     <>
       <NavLink
         to="/"
-        className="flex flex-row justify-center items-center text-base-content hover:text-accent text-sm lg:text-lg font-bold mr-5"
+        className={({ isActive }) =>
+          `flex flex-row justify-center items-center text-sm lg:text-lg font-bold mr-5 ${
+            isActive ? "text-accent" : "text-base-content hover:text-accent"
+          }`
+        }
       >
         <AiFillHome className="inline mr-1" />
         {t("header.home")}
       </NavLink>
       <NavLink
         to="/question-upload"
-        className="flex flex-row justify-center items-center text-base-content hover:text-accent text-sm lg:text-lg font-bold mr-5"
+        className={({ isActive }) =>
+          `flex flex-row justify-center items-center text-sm lg:text-lg font-bold mr-5 ${
+            isActive ? "text-accent" : "text-base-content hover:text-accent"
+          }`
+        }
       >
         <AiOutlineUpload className="inline mr-1" />
         {t("header.questionUpload")}
       </NavLink>
       <NavLink
         to="/question-creation"
-        className="flex flex-row justify-center items-center text-base-content hover:text-accent text-sm lg:text-lg font-bold mr-5"
+        className={({ isActive }) =>
+          `flex flex-row justify-center items-center text-sm lg:text-lg font-bold mr-5 ${
+            isActive ? "text-accent" : "text-base-content hover:text-accent"
+          }`
+        }
       >
         <AiOutlineFileAdd className="inline mr-1" />
         {t("header.questionCreation")}
       </NavLink>
       <NavLink
         to="/about"
-        className="flex flex-row justify-center items-center text-base-content hover:text-accent text-sm lg:text-lg font-bold mr-5"
+        className={({ isActive }) =>
+          `flex flex-row justify-center items-center text-sm lg:text-lg font-bold mr-5 ${
+            isActive ? "text-accent" : "text-base-content hover:text-accent"
+          }`
+        }
       >
         <AiFillQuestionCircle className="inline mr-1" />
         {t("header.about")}

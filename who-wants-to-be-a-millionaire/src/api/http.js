@@ -7,6 +7,7 @@ export const queryClient = new QueryClient();
 
 export async function fetchQuestions() {
   try {
+    console.log("Fetching questions data...");
     const response = await axios.get(BASE_URL);
 
     if (response.status === 400) {
