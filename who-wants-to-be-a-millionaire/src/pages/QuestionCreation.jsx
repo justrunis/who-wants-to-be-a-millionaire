@@ -6,10 +6,12 @@ import QuestionList from "../components/QuestionCreation/QuestionList";
 import { DragDropContext } from "react-beautiful-dnd";
 import { useTranslation } from "react-i18next";
 import ConfirmationModal from "../components/QuestionCreation/ConfirmationModal";
+import { useNavigate } from "react-router-dom";
 
 export default function QuestionCreation() {
   const startingQuestions = useSelector((state) => state.questions.questions);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { t } = useTranslation("global");
 
@@ -66,7 +68,13 @@ export default function QuestionCreation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(questionsAction.setQuestions(questions));
+    let id = 1;
+    const updatedQuestions = questions.map((q) => {
+      return { ...q, id: id++ };
+    });
+    setQuestions(updatedQuestions);
+    dispatch(questionsAction.setQuestions(updatedQuestions));
+    navigate("/");
   };
 
   const handleJsonGeneration = () => {

@@ -12,8 +12,8 @@ export default function QuestionList({
         <div {...provided.droppableProps} ref={provided.innerRef}>
           {questions.map((q, questionIndex) => (
             <Draggable
-              key={questionIndex}
-              draggableId={`question-${questionIndex}`}
+              key={q.id}
+              draggableId={`question-${q.id}`}
               index={questionIndex}
             >
               {(provided) => (

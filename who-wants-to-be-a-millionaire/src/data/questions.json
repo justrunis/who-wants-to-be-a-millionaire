@@ -1,92 +1,102 @@
 [
   {
     "id": 1,
-    "question": "What is the capital of France?",
-    "answers": ["London", "Berlin", "Madrid", "Paris"],
-    "correct": 3
+    "question": "What is the chemical symbol for water?",
+    "answers": ["H2O", "CO2", "O2", "H2SO4"],
+    "correct": 0
   },
   {
     "id": 2,
-    "question": "What is the capital of Germany?",
-    "answers": ["London", "Berlin", "Madrid", "Paris"],
-    "correct": 1
-  },
-  {
-    "id": 3,
-    "question": "What is the capital of Spain?",
-    "answers": ["London", "Berlin", "Madrid", "Paris"],
+    "question": "What planet is known for its rings?",
+    "answers": ["Mars", "Venus", "Saturn", "Jupiter"],
     "correct": 2
   },
   {
-    "id": 4,
-    "question": "What is the capital of the United Kingdom?",
-    "answers": ["London", "Berlin", "Madrid", "Paris"],
+    "id": 3,
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "answers": [
+      "Harper Lee",
+      "Mark Twain",
+      "Ernest Hemingway",
+      "F. Scott Fitzgerald"
+    ],
     "correct": 0
+  },
+  {
+    "id": 4,
+    "question": "What is the smallest unit of life that can replicate independently?",
+    "answers": ["Tissue", "Cell", "Organ", "Organism"],
+    "correct": 1
   },
   {
     "id": 5,
-    "question": "What is the capital of the United States?",
-    "answers": ["Washington D.C.", "Berlin", "Madrid", "Paris"],
-    "correct": 0
+    "question": "In which year did the first man land on the moon?",
+    "answers": ["1965", "1967", "1969", "1971"],
+    "correct": 2
   },
   {
     "id": 6,
-    "question": "What is the capital of Italy?",
-    "answers": ["London", "Berlin", "Rome", "Paris"],
+    "question": "What is the largest organ in the human body?",
+    "answers": ["Heart", "Liver", "Skin", "Lungs"],
     "correct": 2
   },
   {
     "id": 7,
-    "question": "What is the capital of Japan?",
-    "answers": ["London", "Berlin", "Madrid", "Tokyo"],
-    "correct": 3
+    "question": "Who painted the Sistine Chapel ceiling?",
+    "answers": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Titian"],
+    "correct": 1
   },
   {
     "id": 8,
-    "question": "What is the capital of Australia?",
-    "answers": ["London", "Berlin", "Canberra", "Paris"],
-    "correct": 2
+    "question": "What is the powerhouse of the cell?",
+    "answers": ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
+    "correct": 1
   },
   {
     "id": 9,
-    "question": "What is the capital of Brazil?",
-    "answers": ["London", "Brasília", "Madrid", "Paris"],
+    "question": "Which planet is known as the 'Red Planet'?",
+    "answers": ["Venus", "Mars", "Mercury", "Jupiter"],
     "correct": 1
   },
   {
     "id": 10,
-    "question": "What is the capital of Canada?",
-    "answers": ["London", "Berlin", "Madrid", "Ottawa"],
-    "correct": 3
+    "question": "What is the capital of the European Union?",
+    "answers": ["Brussels", "Strasbourg", "Amsterdam", "Berlin"],
+    "correct": 0
   },
   {
     "id": 11,
-    "question": "What is the capital of China?",
-    "answers": ["London", "Beijing", "Madrid", "Paris"],
+    "question": "What is the main ingredient in guacamole?",
+    "answers": ["Tomato", "Avocado", "Pepper", "Onion"],
     "correct": 1
   },
   {
     "id": 12,
-    "question": "What is the capital of India?",
-    "answers": ["London", "Berlin", "New Delhi", "Paris"],
-    "correct": 2
+    "question": "Who developed the theory of evolution by natural selection?",
+    "answers": [
+      "Charles Darwin",
+      "Albert Einstein",
+      "Isaac Newton",
+      "Gregor Mendel"
+    ],
+    "correct": 0
   },
   {
     "id": 13,
-    "question": "What is the capital of Russia?",
-    "answers": ["London", "Berlin", "Moscow", "Paris"],
-    "correct": 2
+    "question": "What is the hardest natural substance on Earth?",
+    "answers": ["Gold", "Diamond", "Iron", "Platinum"],
+    "correct": 1
   },
   {
     "id": 14,
-    "question": "What is the capital of South Africa?",
-    "answers": ["London", "Berlin", "Pretoria", "Paris"],
+    "question": "In which organ of the human body would you find the hippocampus?",
+    "answers": ["Liver", "Heart", "Brain", "Lungs"],
     "correct": 2
   },
   {
     "id": 15,
-    "question": "What is the capital of South Korea?",
-    "answers": ["London", "Seoul", "Madrid", "Paris"],
-    "correct": 3
+    "question": "What is the main language spoken in Brazil?",
+    "answers": ["Spanish", "Portuguese", "English", "French"],
+    "correct": 1
   }
 ]
