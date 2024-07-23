@@ -18,7 +18,8 @@
     "questionUploadText2": "The file should contain an array of objects, where each object represents a question.",
     "questionUploadText3": "The array must have 15 questions, each with a unique id.",
     "uploadInstructions": "Allowed file types:",
-    "uploadQuestions": "Upload Questions"
+    "uploadQuestions": "Upload Questions",
+    "generateRandomQuestions": "Generate Random Questions"
   },
   "questionCreation": {
     "questionsCreation": "Questions Creation",

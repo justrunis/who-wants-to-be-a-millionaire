@@ -18,7 +18,8 @@
     "questionUploadText2": "Failas turi turėti objektų masyvą, kuriame kiekvienas objektas atitinka klausimą.",
     "questionUploadText3": "Masyvas turi turėti 15 klausimų, kiekvienas su unikaliu ID.",
     "uploadInstructions": "Leidžiami failų tipai:",
-    "uploadQuestions": "Įkelti klausimus"
+    "uploadQuestions": "Įkelti klausimus",
+    "generateRandomQuestions": "Generuoti atsitiktinius klausimus"
   },
   "questionCreation": {
     "questionsCreation": "Klausimų kūrimas",

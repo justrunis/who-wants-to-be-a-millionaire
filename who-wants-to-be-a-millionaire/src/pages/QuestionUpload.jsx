@@ -129,7 +129,7 @@ export default function QuestionUpload() {
             className="bg-accent text-white font-bold py-2 px-4 rounded-lg mt-4"
             onClick={generateRandomQuestions}
           >
-            Generate random questions
+            {t("questionUpload.generateRandomQuestions")}
           </Button>
         </div>
       </motion.div>

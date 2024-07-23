@@ -18,7 +18,8 @@
     "questionUploadText2": "Файлът трябва да съдържа масив от обекти, където всеки обект представлява въпрос.",
     "questionUploadText3": "Масивът трябва да има 15 въпроса, всеки с уникален идентификационен номер.",
     "uploadInstructions": "Разрешени типове файлове:",
-    "uploadQuestions": "Качете въпроси"
+    "uploadQuestions": "Качете въпроси",
+    "generateRandomQuestions": "Генерирайте случайни въпроси"
   },
   "questionCreation": {
     "questionsCreation": "Създаване на въпроси",
