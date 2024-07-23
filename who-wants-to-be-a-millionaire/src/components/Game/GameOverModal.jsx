@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Modal from "../UI/Modal";
+import { useTranslation } from "react-i18next";
 
 export default function GameOverModal({
   playerName,
@@ -9,6 +10,8 @@ export default function GameOverModal({
   onRestart,
   title,
 }) {
+  const { t } = useTranslation("global");
+
   return (
     <Modal
       open={open}
@@ -23,13 +26,14 @@ export default function GameOverModal({
       >
         <h2 className="text-2xl font-bold">{title}</h2>
         <p className="text-lg">
-          {playerName ? playerName : "Unknown"}, you have won {moneyAmount}
+          {playerName ? playerName : t("game.unknown")}, {t("game.youHaveWon")}{" "}
+          {moneyAmount}
         </p>
         <button
           onClick={onRestart}
           className="p-2 bg-secondary text-base-100 rounded-lg"
         >
-          Restart
+          {t("game.restart")}
         </button>
       </motion.div>
     </Modal>

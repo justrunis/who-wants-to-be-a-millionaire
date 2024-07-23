@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../UI/Button";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 export default function QuestionBoard({
   questionID,
@@ -13,6 +14,8 @@ export default function QuestionBoard({
 }) {
   const questions = useSelector((state) => state.questions.questions);
   const question = questions.find((q) => q.id === questionID);
+
+  const { t } = useTranslation("global");
 
   // State to store the original and filtered answers
   const [originalAnswers, setOriginalAnswers] = useState(question.answers);
@@ -139,7 +142,7 @@ export default function QuestionBoard({
                 {String.fromCharCode(65 + index)}. {option}
                 {audiencePoll && (
                   <div className="text-xs text-base-content italic">
-                    {audiencePoll[index]}% voted
+                    {audiencePoll[index]}% {t("game.voted")}
                   </div>
                 )}
               </>

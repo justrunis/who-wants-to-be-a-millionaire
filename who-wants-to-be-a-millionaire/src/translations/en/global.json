@@ -22,7 +22,39 @@
   },
   "questionCreation": {
     "questionsCreation": "Questions Creation",
+    "instructions": "Please create 15 questions and mark the correct answer with the checkbox. You can also drag the questions to move them around",
     "question": "Question",
-    "answer": "Answer"
+    "answer": "Answer",
+    "save": "Save",
+    "generateJson": "Generate JSON",
+    "addQuestion": "Add Question"
+  },
+  "game": {
+    "player": "Player:",
+    "previousQuestion": "Previous Question",
+    "nextQuestion": "Next Question",
+    "gameOver": "Game Over",
+    "congratulations": "Congratulations!",
+    "youHaveWon": "you have won",
+    "restart": "Restart",
+    "unknown": "Unknown",
+    "voted": "voted"
+  },
+  "about": {
+    "about": "About",
+    "text1": "This is a quiz app created with React and Framer Motion. It is based on the popular TV show",
+    "text2": "The questions are stored in a Redux state and are displayed one at a time. The player can choose from four possible answers and must answer each question before moving on to the next one.",
+    "text3": "The player can also use four lifelines to help them answer the questions. These lifelines include:",
+    "fiftyFifty": "50/50",
+    "fiftyFiftyText": "Removes two incorrect answers, leaving the correct answer and one incorrect answer",
+    "phoneAFriend": "Phone a Friend",
+    "phoneAFriendText": "Calls a friend to ask for help with the question",
+    "askTheAudience": "Ask the Audience",
+    "askTheAudienceText": "Polls the audience to see what they think the correct answer is",
+    "askTheHost": "Ask the Host",
+    "askTheHostText": "Asks the host for help with the question",
+    "text4": "The app keeps track of the player's score and displays it at the end of the game. Players can choose to play again and try to beat their previous score.",
+    "text5": "It is a fun and challenging game that tests the player's knowledge in a variety of categories.",
+    "enjoyGame": "Enjoy the game and test your knowledge!"
   }
 }

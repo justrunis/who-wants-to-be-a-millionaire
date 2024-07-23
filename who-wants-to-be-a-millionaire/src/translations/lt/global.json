@@ -19,5 +19,42 @@
     "questionUploadText3": "Masyvas turi turėti 15 klausimų, kiekvienas su unikaliu ID.",
     "uploadInstructions": "Leidžiami failų tipai:",
     "uploadQuestions": "Įkelti klausimus"
+  },
+  "questionCreation": {
+    "questionsCreation": "Klausimų kūrimas",
+    "instructions": "Prašome sukurti 15 klausimų ir pažymėti teisingą atsakymą varnele. Taip pat galite vilkti klausimus, kad juos perkeltumėte.",
+    "question": "Klausimas",
+    "answer": "Atsakymas",
+    "save": "Išsaugoti",
+    "generateJson": "Generuoti JSON",
+    "addQuestion": "Pridėti klausimą"
+  },
+  "game": {
+    "player": "Žaidėjas:",
+    "previousQuestion": "Ankstesnis klausimas",
+    "nextQuestion": "Kitas klausimas",
+    "gameOver": "Žaidimas baigtas",
+    "congratulations": "Sveikiname!",
+    "youHaveWon": "jūs laimėjote",
+    "restart": "Pradėti iš naujo",
+    "unknown": "Anonimas",
+    "voted": "balsavo"
+  },
+  "about": {
+    "about": "Apie",
+    "text1": "Tai yra viktorinos programa, sukurta naudojant React ir Framer Motion. Ji paremta populiariu TV šou",
+    "text2": "Klausimai saugomi Redux būsenoje ir rodomi po vieną. Žaidėjas gali rinktis iš keturių galimų atsakymų ir turi atsakyti į kiekvieną klausimą prieš pereidamas prie kito.",
+    "text3": "Žaidėjas taip pat gali naudoti keturias gelbėjimosi linijas, kad padėtų atsakyti į klausimus. Šios gelbėjimosi linijos apima:",
+    "fiftyFifty": "50/50",
+    "fiftyFiftyText": "Pašalina du neteisingus atsakymus, palikdamas teisingą atsakymą ir vieną neteisingą atsakymą",
+    "phoneAFriend": "Skambinti draugui",
+    "phoneAFriendText": "Skambina draugui prašyti pagalbos su klausimu",
+    "askTheAudience": "Klausti žiūrovų",
+    "askTheAudienceText": "Apklausia žiūrovus, kad sužinotų, ką jie mano apie teisingą atsakymą",
+    "askTheHost": "Klausti vedėjo",
+    "askTheHostText": "Klausia vedėjo pagalbos su klausimu",
+    "text4": "Programa seka žaidėjo rezultatą ir rodo jį žaidimo pabaigoje. Žaidėjai gali pasirinkti žaisti dar kartą ir bandyti pagerinti savo ankstesnį rezultatą.",
+    "text5": "Tai yra linksmas ir iššūkių kupinas žaidimas, kuris tikrina žaidėjo žinias įvairiose kategorijose.",
+    "enjoyGame": "Mėgaukitės žaidimu ir išbandykite savo žinias!"
   }
 }

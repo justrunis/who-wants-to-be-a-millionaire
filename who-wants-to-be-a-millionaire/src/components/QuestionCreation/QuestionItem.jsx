@@ -29,7 +29,7 @@ export default function QuestionItem({
       ref={provided.innerRef}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
-      className="relative flex flex-col items-center lg:items-start gap-5 mb-5 bg-gray-500 p-4 rounded-lg shadow-md"
+      className="relative flex flex-col items-center lg:items-start gap-5 mb-5 bg-gray-500 p-4 rounded-lg shadow-md border-2 border-accent"
     >
       {/* Icon for removing question */}
       <MdOutlineCancel

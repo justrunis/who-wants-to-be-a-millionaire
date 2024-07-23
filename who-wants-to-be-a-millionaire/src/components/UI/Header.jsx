@@ -51,7 +51,7 @@ export default function Header() {
         >
           <motion.img
             src={logo}
-            alt="Virtual Vroom"
+            alt="logo"
             className="inline p-2"
             width={100}
             height={100}

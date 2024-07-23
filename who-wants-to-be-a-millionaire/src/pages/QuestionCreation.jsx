@@ -101,6 +101,12 @@ export default function QuestionCreation() {
       <h2 className="text-3xl text-center text-accent font-bold mt-10">
         {t("questionCreation.questionsCreation")}
       </h2>
+      <div className="w-80 lg:w-1/4 bg-base-100 p-6 rounded-lg border-2 border-accent">
+        <p className="text-center text-accent">
+          {/** Explanation of how to create questions */}
+          {t("questionCreation.instructions")}
+        </p>
+      </div>
       <form
         className="flex flex-col justify-center gap-5"
         onSubmit={handleSubmit}
@@ -120,17 +126,17 @@ export default function QuestionCreation() {
             className="btn btn-success"
             onClick={handleSubmit}
           >
-            Submit
+            {t("questionCreation.save")}
           </button>
           <button
             type="button"
             className="btn btn-warning"
             onClick={handleJsonGeneration}
           >
-            Generate JSON
+            {t("questionCreation.generateJson")}
           </button>
           <button type="button" className="btn btn-info" onClick={addQuestion}>
-            Add question
+            {t("questionCreation.addQuestion")}
           </button>
         </div>
       </form>

@@ -10,9 +10,12 @@ import { moneyLevels } from "../data/money";
 import GameOverModal from "../components/Game/GameOverModal";
 import Button from "../components/UI/Button";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 export default function Game({ playerName }) {
   const questions = useSelector((state) => state.questions.questions);
+
+  const { t } = useTranslation("global");
 
   const [play] = useSound(startSound);
   const [playCorrect] = useSound(correct);
@@ -90,7 +93,7 @@ export default function Game({ playerName }) {
           <GameOverModal
             className="w-100 p-4 rounded-lg shadow-lg dark:shadow-primary-dark"
             playerName={playerName}
-            title="Game Over"
+            title={t("game.gameOver")}
             moneyAmount={
               currentQuestion > 1
                 ? moneyLevels[currentQuestion - 2].amount
@@ -105,7 +108,7 @@ export default function Game({ playerName }) {
           <GameOverModal
             className="w-100 p-4 rounded-lg shadow-lg dark:shadow-primary-dark"
             playerName={playerName}
-            title="Congratulations"
+            title={t("game.congratulations")}
             moneyAmount={moneyLevels[moneyLevels.length - 1].amount}
             open={showVictoryModal}
             onClose={() => {
@@ -129,7 +132,7 @@ export default function Game({ playerName }) {
       <div className="flex lg:flex-col items-center justify-center h-full w-1/2 lg:w-1/4 bg-base-100">
         <div className="flex flex-col gap-2 items-center justify-center mt-4">
           <h3 className="text-base-content text-2xl text-center">
-            Player: {playerName ? playerName : "Unknown"}
+            {t("game.player")} {playerName ? playerName : t("game.unknown")}
           </h3>
           <div className="flex flex-col justify-center items-center lg:flex-row gap-2">
             {currentQuestion > 1 && (
@@ -137,7 +140,7 @@ export default function Game({ playerName }) {
                 onClick={() => setCurrentQuestion(currentQuestion - 1)}
                 className="p-2 bg-base-300 text-base-content rounded-lg border-2 border-secondary"
               >
-                Previous Question
+                {t("game.previousQuestion")}
               </Button>
             )}
             {currentQuestion < questions.length && (
@@ -145,7 +148,7 @@ export default function Game({ playerName }) {
                 onClick={() => setCurrentQuestion(currentQuestion + 1)}
                 className="p-2 bg-base-300 text-base-content rounded-lg border-2 border-secondary"
               >
-                Next Question
+                {t("game.nextQuestion")}
               </Button>
             )}
           </div>

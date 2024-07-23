@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import logo from "../assets/icon.png";
 
 export default function About() {
+  const { t } = useTranslation("global");
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -8,51 +12,111 @@ export default function About() {
       exit={{ opacity: 0 }}
       className="max-w-4xl mx-auto p-6 bg-white text-black rounded-lg shadow-lg"
     >
-      <h1 className="text-3xl font-bold text-accent text-center mb-6">About</h1>
-      <p className="text-lg mb-4">
-        This is a quiz app created with React and Framer Motion. It is based on
-        the popular TV show{" "}
-        <span className="font-semibold">Who Wants to Be a Millionaire?</span>
-      </p>
-      <p className="text-lg mb-4">
-        The questions are stored in a separate file and are displayed one at a
-        time. The player can choose from four possible answers and must answer
-        each question before moving on to the next one.
-      </p>
-      <p className="text-lg mb-4">
-        The player can also use four lifelines to help them answer the
-        questions. These lifelines include:
+      <motion.h3
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-3xl font-bold text-accent text-center mb-6"
+      >
+        {t("about.about")}
+      </motion.h3>
+      <div className="flex justify-center">
+        <motion.img
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          src={logo}
+          alt="logo"
+          className="inline p-2"
+          width={200}
+          height={200}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 1 }}
+        />
+      </div>
+      <motion.p
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-lg mb-4"
+      >
+        {t("about.text1")}{" "}
+        <span className="font-semibold">{t("header.title")}</span>
+      </motion.p>
+      <motion.p
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-lg mb-4"
+      >
+        {t("about.text2")}{" "}
+      </motion.p>
+      <motion.p
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="text-lg mb-4"
+      >
+        {t("about.text3")}{" "}
         <ul className="list-disc list-inside ml-5 mt-2">
-          <li>
-            <span className="font-semibold">50/50:</span> Remove two incorrect
-            answers.
-          </li>
-          <li>
-            <span className="font-semibold">Phone a Friend:</span> Ask a friend
-            for help.
-          </li>
-          <li>
-            <span className="font-semibold">Ask the Host:</span> Get a hint from
-            the host.
-          </li>
-          <li>
-            <span className="font-semibold">Ask the Audience:</span> See how the
-            audience would vote.
-          </li>
+          <motion.li
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <span className="font-semibold">{t("about.fiftyFifty")}:</span>{" "}
+            {t("about.fiftyFiftyText")}
+          </motion.li>
+          <motion.li
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <span className="font-semibold">{t("about.phoneAFriend")}:</span>{" "}
+            {t("about.phoneAFriendText")}
+          </motion.li>
+          <motion.li
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+          >
+            <span className="font-semibold">{t("about.askTheHost")}:</span>{" "}
+            {t("about.askTheHostText")}
+          </motion.li>
+          <motion.li
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+          >
+            <span className="font-semibold">{t("about.askTheAudience")}:</span>{" "}
+            {t("about.askTheAudienceText")}
+          </motion.li>
         </ul>
-      </p>
-      <p className="text-lg mb-4">
-        The app keeps track of the player's score and displays it at the end of
-        the game. Players can choose to play again and try to beat their
-        previous score.
-      </p>
-      <p className="text-lg mb-4">
-        It is a fun and challenging game that tests the player's knowledge in a
-        variety of categories.
-      </p>
-      <p className="text-lg text-center font-bold text-accent mt-6">
-        Enjoy the game and test your knowledge!
-      </p>
+      </motion.p>
+      <motion.p
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.4 }}
+        className="text-lg mb-4"
+      >
+        {t("about.text4")}{" "}
+      </motion.p>
+      <motion.p
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.6 }}
+        className="text-lg mb-4"
+      >
+        {t("about.text5")}{" "}
+      </motion.p>
+      <motion.p
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.8 }}
+        className="text-lg text-center font-bold text-accent mt-6"
+      >
+        {t("about.enjoyGame")}
+      </motion.p>
     </motion.div>
   );
 }
