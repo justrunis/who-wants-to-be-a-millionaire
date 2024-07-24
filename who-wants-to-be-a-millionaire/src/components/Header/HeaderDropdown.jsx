@@ -14,7 +14,7 @@ export default function HeaderDropdown({
   const { t } = useTranslation("global");
 
   return (
-    <div className="absolute top-5 right-0 mt-2 bg-base-200 border border-gray-200 rounded-lg shadow-lg w-32">
+    <div className="absolute top-5 right-0 mt-2 bg-base-200 border border-gray-200 rounded-lg shadow-lg w-32 z-50">
       {languages.map((lang) => (
         <button
           key={lang.code}

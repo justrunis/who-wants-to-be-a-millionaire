@@ -7,13 +7,19 @@ export const queryClient = new QueryClient();
 
 export async function fetchQuestions() {
   try {
-    console.log("Fetching questions data...");
     const response = await axios.get(BASE_URL);
 
     if (response.status === 400) {
       const error = new Error(
         "An error occurred while fetching questions data"
       );
+      error.code = response.status;
+      error.info = response.data;
+      throw error;
+    }
+
+    if (response.status === 429) {
+      const error = new Error("Too many requests. Please try again later.");
       error.code = response.status;
       error.info = response.data;
       throw error;
@@ -28,12 +34,39 @@ export async function fetchQuestions() {
       throw error;
     }
 
-    return response.data;
+    const result = response.data.results;
+
+    const sortedResult = result.sort((a, b) => {
+      const difficultyOrder = {
+        easy: 1,
+        medium: 2,
+        hard: 3,
+      };
+
+      return difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty];
+    });
+
+    return sortedResult;
   } catch (error) {
-    if (error.response && error.response.status === 400) {
-      return error.response.data;
-    } else {
-      return error;
+    if (error.response) {
+      if (error.response.status === 400) {
+        const customError = new Error(
+          "An error occurred while fetching questions data"
+        );
+        customError.code = 400;
+        customError.info = error.response.data;
+        throw customError;
+      }
+      if (error.response.status === 429) {
+        const customError = new Error(
+          "Too many requests. Please try again later."
+        );
+        customError.code = 429;
+        customError.info = error.response.data;
+        throw customError;
+      }
     }
+
+    throw error;
   }
 }

@@ -66,6 +66,10 @@
     "maxQuestionError": "Galite turėti ne daugiau kaip 15 klausimų",
     "noFileError": "Failas neįkeltas.",
     "JSONError": "Klaida analizuojant JSON:",
-    "questionCountError": "Prašome įkelti failą su 15 klausimų."
+    "questionCountError": "Prašome įkelti failą su 15 klausimų.",
+    "errorTitle": "Įvyko klaida",
+    "error": "Nepavyko gauti atsitiktinių klausimų",
+    "invalidQuestionFormat": "Netinkamas klausimo formatas.",
+    "questionsGenerated": "Klausimai sėkmingai sugeneruoti"
   }
 }

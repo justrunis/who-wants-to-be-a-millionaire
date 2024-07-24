@@ -66,6 +66,10 @@
     "maxQuestionError": "You can only have a maximum of 15 questions",
     "noFileError": "No file uploaded.",
     "JSONError": "Error parsing JSON:",
-    "questionCountError": "Please upload a file with 15 questions."
+    "questionCountError": "Please upload a file with 15 questions.",
+    "errorTitle": "An error occurred",
+    "error": "Failed to fetch random questions",
+    "invalidQuestionFormat": "Invalid question format.",
+    "questionsGenerated": "Questions generated successfully"
   }
 }

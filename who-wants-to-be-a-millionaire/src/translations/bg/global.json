@@ -66,6 +66,10 @@
     "maxQuestionError": "Можете да имате максимум 15 въпроса",
     "noFileError": "Не е качен файл.",
     "JSONError": "Грешка при анализиране на JSON:",
-    "questionCountError": "Моля, качете файл с 15 въпроса."
+    "questionCountError": "Моля, качете файл с 15 въпроса.",
+    "errorTitle": "Възникна грешка",
+    "error": "Неуспешно получаване на случайни въпроси",
+    "invalidQuestionFormat": "Невалиден формат на въпроса.",
+    "questionsGenerated": "Въпросите бяха успешно генерирани"
   }
 }
