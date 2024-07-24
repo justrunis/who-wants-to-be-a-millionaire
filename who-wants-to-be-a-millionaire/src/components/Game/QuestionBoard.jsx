@@ -118,14 +118,14 @@ export default function QuestionBoard({
   };
 
   return (
-    <div className="w-1/2 p-50">
-      <div className="flex flex-col items-center justify-center gap-4 bg-base-100 p-8 rounded-lg border-2 border-secondary mb-5">
+    <div className="w-full mt-20 md:w-1/2 p-4 md:p-8">
+      <div className="flex flex-col items-center justify-center gap-4 bg-base-100 p-4 md:p-8 rounded-lg border-2 border-secondary mb-5">
         <h2
           className="text-2xl text-center"
           dangerouslySetInnerHTML={{ __html: question.question }}
         ></h2>
       </div>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {filteredAnswers.map((option, index) => (
           <Button
             whileHover={{ scale: 1.1 }}

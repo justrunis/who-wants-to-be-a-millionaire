@@ -129,9 +129,9 @@ export default function Game({ playerName }) {
           hint={currentHint}
         />
       </div>
-      <div className="flex lg:flex-col items-center justify-center h-full w-1/2 lg:w-1/4 bg-base-100">
+      <div className="flex flex-col items-center justify-center h-full w-full lg:w-1/4 bg-base-100">
         <div className="flex flex-col gap-2 items-center justify-center mt-4">
-          <h3 className="text-base-content text-2xl text-center">
+          <h3 className="text-base-content text-2xl text-center mt-20 lg:mt-0">
             {t("game.player")} {playerName ? playerName : t("game.unknown")}
           </h3>
           <div className="flex flex-col justify-center items-center lg:flex-row gap-2">

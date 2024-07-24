@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Logo from "../Header/Logo";
 import NavLinks from "../Header/NavLinks";
@@ -20,25 +19,27 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-base-100 text-base-content flex justify-between p-4">
-      <div className="flex flex-row items-center">
+    <header className="bg-base-100 text-base-content flex justify-between items-center p-4">
+      <div className="flex items-center">
         <Link
           to="/"
-          className="flex flex-row items-center justify-center gap-2 text-base-content hover:text-accent text-lg lg:text-xl font-bold ml-5"
+          className="flex items-center justify-center gap-2 text-base-content hover:text-accent text-lg lg:text-xl font-bold"
         >
           <Logo />
         </Link>
       </div>
-      <div className="flex flex-row items-center">
+      <div className="flex items-center lg:hidden">
         <MobileMenuButton
           isMenuOpen={isMenuOpen}
           toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
         />
-        <nav
-          className={`nav ${
-            isMenuOpen ? "block" : "hidden"
-          } lg:flex lg:flex-row lg:items-center lg:mr-10 flex flex-col gap-2`}
-        >
+      </div>
+      <nav
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } absolute top-16 left-0 w-full bg-base-100 lg:static lg:w-auto lg:flex lg:items-center`}
+      >
+        <div className="flex flex-col lg:flex-row lg:items-center gap-2 p-4 lg:p-0">
           <NavLinks />
           <div className="relative flex justify-center items-center">
             <LanguageDropdown
@@ -48,8 +49,8 @@ export default function Header() {
               handleChangeLanguage={handleChangeLanguage}
             />
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   );
 }

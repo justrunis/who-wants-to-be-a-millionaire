@@ -28,41 +28,57 @@ export default function HintContainer({ onHintSelect }) {
   }
 
   return (
-    <div className="flex flex-row items-center justify-center gap-2">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4">
       {visibleHints.fiftyFifty && (
         <Button
           onClick={handleHintSelect}
-          className="w-1/4 p-2 bg-base-100 text-base-content rounded-lg"
+          className="flex items-center justify-center p-2 bg-base-100 text-base-content rounded-lg"
           data-value="fiftyFifty"
         >
-          <img src={fiftyFiftyImage} alt="50-50" />
+          <img
+            src={fiftyFiftyImage}
+            alt="50-50"
+            className="w-full h-auto max-w-[150px]"
+          />
         </Button>
       )}
       {visibleHints.phoneAFriend && (
         <Button
           onClick={handleHintSelect}
-          className="w-1/4 p-2 bg-base-100 text-base-content rounded-lg"
+          className="flex items-center justify-center p-2 bg-base-100 text-base-content rounded-lg"
           data-value="phoneAFriend"
         >
-          <img src={phoneAFriendImage} alt="Phone a friend" />
+          <img
+            src={phoneAFriendImage}
+            alt="Phone a friend"
+            className="w-full h-auto max-w-[150px]"
+          />
         </Button>
       )}
       {visibleHints.askTheHost && (
         <Button
           onClick={handleHintSelect}
-          className="w-1/4 p-2 bg-base-100 text-base-content rounded-lg"
+          className="flex items-center justify-center p-2 bg-base-100 text-base-content rounded-lg"
           data-value="askTheHost"
         >
-          <img src={askTheHostImage} alt="Ask the host" />
+          <img
+            src={askTheHostImage}
+            alt="Ask the host"
+            className="w-full h-auto max-w-[150px]"
+          />
         </Button>
       )}
       {visibleHints.askTheAudience && (
         <Button
           onClick={handleHintSelect}
-          className="w-1/4 p-2 bg-base-100 text-base-content rounded-lg"
+          className="flex items-center justify-center p-2 bg-base-100 text-base-content rounded-lg"
           data-value="askTheAudience"
         >
-          <img src={askTheAudienceImage} alt="Ask the audience" />
+          <img
+            src={askTheAudienceImage}
+            alt="Ask the audience"
+            className="w-full h-auto max-w-[150px]"
+          />
         </Button>
       )}
     </div>

@@ -6,7 +6,7 @@ export default function Pyramid({ currentQuestion, onHintSelect }) {
   return (
     <div className="flex flex-col justify-start gap-5 bg-base-100 text-base-content w-full h-full p-8">
       <HintContainer onHintSelect={(hint) => onHintSelect(hint)} />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 pb-10 md:pb-0">
         {moneyLevels
           .slice(0)
           .reverse()
